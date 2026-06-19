@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huy-Hoan Nguyen</title>
+    <title>Huy-Hoan Nguyen | AI Software Engineer</title>
+    
+    <!-- SEO & OpenGraph Meta Tags -->
+    <meta name="description" content="Portfolio of Huy-Hoan Nguyen, AI Software Engineer specializing in intelligent systems, computer vision, and cloud-native applications.">
+    <meta property="og:title" content="Huy-Hoan Nguyen | AI Software Engineer">
+    <meta property="og:description" content="Portfolio of Huy-Hoan Nguyen, AI Software Engineer specializing in intelligent systems, computer vision, and cloud-native applications.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/img/hoan.png">
+    <meta property="og:url" content="https://huyhoanCShcmuit.github.io">
     
     <!-- Fonts: Inter for clean readability -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +36,10 @@
                     <li><a href="#projects" class="nav__link">Projects</a></li>
                     <li><a href="#skills" class="nav__link">Skills</a></li>
                 </ul>
+                <button class="cmd-k-btn" id="cmd-k-trigger">
+                    <i class="ri-search-line"></i>
+                    <span>Cmd + K</span>
+                </button>
                 <i class="ri-moon-line change-theme" id="theme-button" title="Toggle Theme"></i>
             </div>
         </div>
@@ -47,7 +59,16 @@
             
             <p class="header__description">
                 Software Engineer specializing in intelligent systems, computer vision, and cloud-native applications. Currently building production AI products and pursuing an M.S. in Computer Science (AI) at VNUHCM-UIT.
+                <br><br>
+                🔭 <b>Focus:</b> AI, Computer Vision, Generative AI<br>
+                🌱 <b>Learning:</b> Cloud Architecture (AWS), MLOps, LLMs<br>
+                ⚡ <b>Motto:</b> <i>"Data beats opinion."</i>
             </p>
+            
+            <div class="header__status">
+                <span class="status-dot"></span>
+                <span>Currently exploring: Multi-Agent Systems & Distributed AI Architecture</span>
+            </div>
 
             <div class="header__links">
                 <a href="mailto:huyhoan652002@gmail.com" class="link-item"><i class="ri-mail-line"></i> Email</a>
@@ -57,7 +78,7 @@
             </div>
         </header>
 
-        <hr class="divider">
+
 
         <!-- EXPERIENCE -->
         <section class="section animate-fade" id="experience">
@@ -95,7 +116,7 @@
             </div>
         </section>
 
-        <hr class="divider">
+
 
         <!-- PROJECTS -->
         <section class="section animate-fade" id="projects">
@@ -144,7 +165,9 @@
             </div>
         </section>
 
-        <hr class="divider">
+
+
+
 
         <!-- SKILLS & EDUCATION -->
         <section class="section animate-fade" id="skills">
@@ -158,15 +181,19 @@
                         </div>
                         <div class="skill-group">
                             <strong>Frameworks</strong>
-                            <span>FastAPI, NestJS, Express.js, React, Flutter</span>
+                            <span>FastAPI, NestJS, Express.js, React, Flutter, Streamlit, Three.js</span>
                         </div>
                         <div class="skill-group">
                             <strong>AI / ML</strong>
-                            <span>Agentic AI, MCP, LangGraph, PyTorch, CV, YOLO</span>
+                            <span>LLM Apps, Agentic AI, MCP, LangGraph, Computer Vision, OCR, PyTorch, YOLO, RT-DETR, OpenCV</span>
                         </div>
                         <div class="skill-group">
-                            <strong>Infrastructure</strong>
-                            <span>AWS (EC2, S3, VPC), Docker, CI/CD, MySQL</span>
+                            <strong>Cloud & DevOps</strong>
+                            <span>AWS (EC2, S3, Cognito, Route53, VPC, ALB), Docker, CI/CD, Git</span>
+                        </div>
+                        <div class="skill-group">
+                            <strong>Databases</strong>
+                            <span>MySQL, MongoDB, SQLite</span>
                         </div>
                     </div>
                 </div>
@@ -192,6 +219,31 @@
         </footer>
 
     </main>
+
+    <!-- COMMAND PALETTE MODAL -->
+    <div class="palette-overlay" id="command-palette">
+        <div class="palette-modal">
+            <div class="palette-search">
+                <i class="ri-search-line"></i>
+                <input type="text" id="palette-input" placeholder="Type a command or search..." autocomplete="off">
+                <span class="palette-esc">ESC</span>
+            </div>
+            <div class="palette-content">
+                <div class="palette-group">
+                    <div class="palette-group-title">Navigation</div>
+                    <a href="#experience" class="palette-item"><i class="ri-briefcase-line"></i> Go to Experience</a>
+                    <a href="#projects" class="palette-item"><i class="ri-folder-code-line"></i> Go to Projects</a>
+                    <a href="#skills" class="palette-item"><i class="ri-terminal-box-line"></i> Go to Skills</a>
+                </div>
+                <div class="palette-group">
+                    <div class="palette-group-title">Actions</div>
+                    <button class="palette-item" id="palette-theme"><i class="ri-moon-line"></i> Toggle Theme</button>
+                    <a href="assets/pdf/Hoan_NguyenHuy_CV.pdf" target="_blank" class="palette-item"><i class="ri-file-text-line"></i> Download Resume</a>
+                    <a href="mailto:huyhoan652002@gmail.com" class="palette-item"><i class="ri-mail-send-line"></i> Send Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Main JS -->
     <script src="assets/js/app.js"></script>

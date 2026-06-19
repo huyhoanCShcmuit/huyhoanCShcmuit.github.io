@@ -471,10 +471,209 @@ body.light-theme .nav {
   transform: translateY(0);
 }
 
+/*==================== PREMIUM ADDITIONS ====================*/
+
+/* Header Status */
+.header__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10B981; /* Emerald green */
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  70% { box-shadow: 0 0 0 4px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* GitHub Stats */
+.github-stats-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+
+.github-stats {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Nav Cmd+K Button */
+.cmd-k-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.cmd-k-btn:hover {
+  border-color: var(--text-muted);
+  color: var(--text-main);
+}
+
+/* Command Palette Modal */
+.palette-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 15vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.palette-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.palette-modal {
+  width: 100%;
+  max-width: 600px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transform: scale(0.98);
+  transition: transform 0.2s ease;
+}
+
+body.light-theme .palette-modal {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.palette-overlay.active .palette-modal {
+  transform: scale(1);
+}
+
+.palette-search {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  gap: 1rem;
+}
+
+.palette-search i {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.palette-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.1rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.palette-search input::placeholder {
+  color: var(--text-muted);
+}
+
+.palette-esc {
+  font-size: 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: var(--text-muted);
+}
+
+.palette-content {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.palette-group {
+  margin-bottom: 1rem;
+}
+
+.palette-group-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.palette-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.8rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.1s ease;
+}
+
+.palette-item i {
+  font-size: 1.1rem;
+}
+
+.palette-item:hover, .palette-item:focus {
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  outline: none;
+}
+
 /*==================== RESPONSIVE ====================*/
 @media (max-width: 640px) {
   .nav__list {
     display: none;
+  }
+  
+  .cmd-k-btn span {
+    display: none; /* Hide 'Cmd+K' text on mobile, just show icon */
   }
   
   .timeline__header {
@@ -490,4 +689,22 @@ body.light-theme .nav {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+  
+  .palette-overlay {
+    padding-top: 5vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
+
+.stats-grid {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 1rem; 
+  width: 100%;
+}
+

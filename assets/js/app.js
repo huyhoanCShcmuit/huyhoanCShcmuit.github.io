@@ -74,3 +74,90 @@ for(const card of document.querySelectorAll(".card")) {
   card.onmousemove = e => handleOnMouseMove(e);
 }
 
+/*==================== GITHUB STATS THEME SYNC ====================*/
+function syncGithubStatsTheme() {
+    const isLight = document.body.classList.contains(lightThemeClass);
+    const darkImg = document.querySelector('.dark-mode-img');
+    const lightImg = document.querySelector('.light-mode-img');
+    
+    if (isLight) {
+        if(darkImg) darkImg.style.display = 'none';
+        if(lightImg) lightImg.style.display = 'block';
+    } else {
+        if(darkImg) darkImg.style.display = 'block';
+        if(lightImg) lightImg.style.display = 'none';
+    }
+}
+// Run once on load
+syncGithubStatsTheme();
+
+// Hook into existing theme button listener
+themeButton.addEventListener('click', () => {
+    setTimeout(syncGithubStatsTheme, 50); // slight delay to let class toggle happen
+});
+
+
+/*==================== COMMAND PALETTE (CMD+K) ====================*/
+const paletteOverlay = document.getElementById('command-palette');
+const paletteInput = document.getElementById('palette-input');
+const cmdKTrigger = document.getElementById('cmd-k-trigger');
+const paletteItems = document.querySelectorAll('.palette-item');
+
+function togglePalette() {
+    paletteOverlay.classList.toggle('active');
+    if (paletteOverlay.classList.contains('active')) {
+        paletteInput.value = '';
+        filterPalette('');
+        setTimeout(() => paletteInput.focus(), 100);
+    }
+}
+
+// Open via Button
+cmdKTrigger.addEventListener('click', togglePalette);
+
+// Open via Keyboard (Cmd+K or Ctrl+K)
+document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        togglePalette();
+    }
+    // Close on ESC
+    if (e.key === 'Escape' && paletteOverlay.classList.contains('active')) {
+        togglePalette();
+    }
+});
+
+// Close when clicking outside modal
+paletteOverlay.addEventListener('click', (e) => {
+    if (e.target === paletteOverlay) togglePalette();
+});
+
+// Filter items based on search
+paletteInput.addEventListener('input', (e) => {
+    filterPalette(e.target.value.toLowerCase());
+});
+
+function filterPalette(query) {
+    paletteItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(query)) {
+            item.style.display = 'flex';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Handle palette actions
+paletteItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        if (item.id === 'palette-theme') {
+            themeButton.click(); // Trigger existing theme toggle
+            // Don't close palette immediately so user sees the change
+        } else {
+            togglePalette(); // Close palette for navigations/links
+        }
+    });
+});
+
+
