@@ -1,314 +1,276 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huy-Hoan Nguyen | AI Software Engineer</title>
+    
+    <!-- Fonts: Outfit for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="dark-theme">
+    
+    <!-- Background Elements for Glassmorphism/Vibrancy -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
 
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="assets/img/favicon-32x32.png" type="image/x-icon">
+    <!-- Navigation -->
+    <nav class="nav container">
+        <a href="#" class="nav__logo">Hoan.</a>
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
+                <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+            </ul>
+        </div>
+        <!-- Theme Change Button -->
+        <i class="ri-moon-line change-theme" id="theme-button"></i>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
         
-        <!--=============== REMIX ICONS ===============-->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <!-- HERO / HEADER -->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">Huy-Hoan Nguyen</h1>
+                    <h2 class="home__subtitle">AI Software Engineer <span class="gradient-text">| Computer Vision | Agentic AI | Cloud-Native Systems</span></h2>
+                    
+                    <p class="home__description">
+                        AI and Software Engineer specializing in intelligent systems, computer vision, and cloud-native applications. Experienced in building production AI products using Python, FastAPI, AWS, LLMs, and modern web technologies. Currently pursuing an M.S. in Computer Science (Artificial Intelligence) at VNUHCM-UIT.
+                    </p>
 
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
+                    <div class="home__social">
+                        <a href="mailto:huyhoan652002@gmail.com" class="home__social-link" title="Email"><i class="ri-mail-line"></i></a>
+                        <a href="https://www.linkedin.com/in/huyhoan652002/" target="_blank" class="home__social-link" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                        <a href="https://github.com/huyhoanCShcmuit" target="_blank" class="home__social-link" title="GitHub"><i class="ri-github-line"></i></a>
+                        <a href="assets/pdf/Hoan_NguyenHuy_CV.pdf" target="_blank" class="home__social-link resume-btn">
+                            <i class="ri-download-line"></i> Resume
+                        </a>
+                    </div>
+                </div>
 
-        <title>HoanDepTraiSieuCapVippro</title>
-    </head>
-    <body>
-        <!--=============== HEADER ===============-->
-        <header class="profile container">
-            <!-- Theme button -->
-            <i class="ri-moon-line change-theme" id="theme-button"></i>
-
-            <div class="profile__container grid">
-                <div class="profile__data">
-                    <div class="profile__border">
-                        <div class="profile__perfil">
-                            <!-- Insert your image, according to the example size of the portfolio -->
-                            <img src="assets/img/hoan.png" alt="">
+                <div class="home__image">
+                    <div class="image__wrapper">
+                        <!-- Try to use the existing image, or fallback -->
+                        <img src="assets/img/hoan.png" alt="Huy-Hoan Nguyen" class="home__img" onerror="this.style.display='none'">
+                    </div>
+                    
+                    <!-- Highlights / Quick Stats Floating Cards -->
+                    <div class="floating-card card-1">
+                        <i class="ri-briefcase-4-fill"></i>
+                        <div>
+                            <h3>2+ Years</h3>
+                            <p>Experience</p>
                         </div>
                     </div>
-
-                    <h2 class="profile__name">Huy Hoan Nguyen</h2>
-                    <h3 class="profile__profession">Student, VNU - HCMUS</h3>
-
-                    <ul class="profile__social">
-                        <a href="https://www.instagram.com/hoan.nguyenhuy.ITUS" target="_blank" class="profile__social-link">
-                            <i class="ri-instagram-line"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/huyhoan652002/" target="_blank" class="profile__social-link">
-                            <i class="ri-linkedin-box-line"></i>
-                        </a>
-                        <a href="https://github.com/huyhoanFithcmus" target="_blank" class="profile__social-link">
-                            <i class="ri-github-line"></i>
-                        </a>
-                    </ul>
-                </div>
-
-                <div class="profile__info grid">
-                    <div class="profile__info-group">
-                        <h3 class="profile__info-number">1</h3>
-                        <p class="profile__info-description">
-                            Years of <br> work
-                        </p>
-                    </div>
-                    <div class="profile__info-group">
-                        <h3 class="profile__info-number">10+</h3>
-                        <p class="profile__info-description">
-                            Completed <br> projects
-                        </p>
-                    </div>
-                    <div class="profile__info-group">
-                        <h3 class="profile__info-number">5+</h3>
-                        <p class="profile__info-description">Satisfied <br> customers</p>
-                    </div>
-                </div>
-
-                <div class="profile__buttons">
-                    <!-- Insert your CV -->
-                    <a download="" href="assets/pdf/Hoan_NguyenHuy_CV.pdf" class="button">
-                        Download CV <i class="ri-download-line"></i>
-                    </a>
-
-                    <div class="profile__buttons-small">
-                        <!-- Insert a real number plus country code -->
-                        <a href="https://api.whatsapp.com/send?phone=0903091969&text=Hello, more information!" target="_blank" class="button button__small button__gray">
-                            <i class="ri-whatsapp-line"></i>
-                        </a>
-                        <!-- Insert your brand name or profile -->
-                        <a href="https://m.me/hoan.nguyenhuy.ITUS" target="_blank" class="button button__small button__gray">
-                            <i class="ri-messenger-line"></i>
-                        </a>
+                    <div class="floating-card card-2">
+                        <i class="ri-code-box-fill"></i>
+                        <div>
+                            <h3>40+ APIs</h3>
+                            <p>Developed</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <!--=============== MAIN ===============-->
-        <main class="main">
-            <section class="filters container">
-                <!--=============== FILTERS TABS ===============-->
-                <ul class="filters__content">
-                    <button class="filters__button filter-tab-active" data-target="#projects">
-                        Projects
-                    </button>
-                    <button class="filters__button" data-target="#skills">
-                        Skills
-                    </button>
-                </ul>
+        <!-- HIGHLIGHTS -->
+        <section class="highlights section container">
+            <div class="highlights__grid">
+                <div class="highlight__card glass">
+                    <i class="ri-server-fill highlight__icon"></i>
+                    <p>Delivered enterprise AI solutions serving 1,000+ users with OCR, LLM, and workflow automation.</p>
+                </div>
+                <div class="highlight__card glass">
+                    <i class="ri-api-fill highlight__icon"></i>
+                    <p>Designed and maintained 40+ REST APIs using FastAPI, AWS, and modern software engineering practices.</p>
+                </div>
+                <div class="highlight__card glass">
+                    <i class="ri-robot-2-fill highlight__icon"></i>
+                    <p>Experienced in LLM applications, Multi-Agent Systems, Computer Vision, OCR, and cloud-native architectures.</p>
+                </div>
+            </div>
+        </section>
 
-                <div class="filters__sections">
-                    <!--=============== PROJECTS ===============-->
-                    <div class="projects__content grid filters__active" data-content id="projects">
-                        <article class="projects__card">
-                            <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
-                            <img src="assets/img/project1.jpg" alt="" class="projects__img">
-
-                            <div class="projects__modal">
-                                <div>
-                                    <span class="projects__subtitle">Game</span>
-                                    <h3 class="projects__title">Turtle racing</h3>
-                                    <a href="https://github.com/huyhoan652002/Turtle-Racing" class="projects__button button button__small">
-                                        <i class="ri-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="projects__card">
-                            <img src="assets/img/project2.jpg" alt="" class="projects__img">
-
-                            <div class="projects__modal">
-                                <div>
-                                    <span class="projects__subtitle">Application</span>
-                                    <h3 class="projects__title">The Favorites Destination</h3>
-                                    <a href="https://github.com/huyhoan652002/Socket_Search_Your_Favorite_Destinations" class="projects__button button button__small">
-                                        <i class="ri-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="projects__card">
-                            <img src="assets/img/project3.jpg" alt="" class="projects__img">
-
-                            <div class="projects__modal">
-                                <div>
-                                    <span class="projects__subtitle">Website</span>
-                                    <h3 class="projects__title">Google clone</h3>
-                                    <a href="https://github.com/huyhoan652002/Search-HTML" class="projects__button button button__small">
-                                        <i class="ri-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="projects__card">
-                            <img src="assets/img/project4.jpg" alt="" class="projects__img">
-
-                            <div class="projects__modal">
-                                <div>
-                                    <span class="projects__subtitle">Extension</span>
-                                    <h3 class="projects__title">HCMUS Moodle Darkmode</h3>
-                                    <a href="https://github.com/huyhoan652002/HCMUS_Moodle_darkmode" class="projects__button button button__small">
-                                        <i class="ri-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="projects__card">
-                            <img src="assets/img/project5.jpg" alt="" class="projects__img">
-
-                            <div class="projects__modal">
-                                <div>
-                                    <span class="projects__subtitle">Design</span>
-                                    <h3 class="projects__title">Bitmap Image</h3>
-                                    <a href="https://github.com/huyhoan652002/BMP-image" class="projects__button button button__small">
-                                        <i class="ri-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
+        <!-- EXPERIENCE -->
+        <section class="experience section container" id="experience">
+            <h2 class="section__title">Experience</h2>
+            
+            <div class="experience__container">
+                <!-- Splus -->
+                <div class="experience__item glass fade-up">
+                    <div class="experience__header">
+                        <div>
+                            <h3 class="experience__title">AI Developer / Project Manager / Team Leader</h3>
+                            <span class="experience__company">Splus Software Joint Stock Company</span>
+                        </div>
+                        <span class="experience__date">May 2024 - Present</span>
                     </div>
+                    <ul class="experience__list">
+                        <li>Designed and delivered enterprise AI applications integrating LLMs, OCR, computer vision, and cloud-native architectures for production environments serving 1,000+ users.</li>
+                        <li>Led end-to-end software development activities including system design, sprint planning, code reviews, technical mentoring, and production deployment.</li>
+                        <li>Developed scalable backend services and AI inference pipelines using Python, FastAPI, TypeScript, AWS, and modern DevOps practices.</li>
+                    </ul>
+                </div>
 
-                    <!--=============== SKILLS ===============-->
-                    <div class="skills__content grid" data-content id="skills">
-                        <div class="skills__area">
-                            <h3 class="skills__title">Frontend Developer</h3>
-    
-                            <div class="skills__box">
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">HTML</h3>
-                                            <span class="skills__level">Skillful</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">CSS</h3>
-                                            <span class="skills__level">Skillful</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">JavaScript</h3>
-                                            <span class="skills__level">Skillful</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">React</h3>
-                                            <span class="skills__level">Skillful</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">Bootstrap</h3>
-                                            <span class="skills__level">Skillful</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">Git</h3>
-                                            <span class="skills__level">Intermediate</span>
-                                        </div>
-                                    </div>
-                                </div>
+                <!-- DevSamurai -->
+                <div class="experience__item glass fade-up">
+                    <div class="experience__header">
+                        <div>
+                            <h3 class="experience__title">Web Developer Intern</h3>
+                            <span class="experience__company">DevSamurai Vietnam JSC</span>
+                        </div>
+                        <span class="experience__date">Feb 2023 - Jul 2023</span>
+                    </div>
+                    <ul class="experience__list">
+                        <li>Developed responsive, high-performance frontend components for scalable Atlassian Marketplace enterprise applications using React and modern JavaScript tooling.</li>
+                        <li>Streamlined application state management and rendering performance within an Agile/Scrum environment, consistently meeting strict release deadlines.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="projects section container" id="projects">
+            <h2 class="section__title">Selected Projects</h2>
+            
+            <div class="projects__container grid">
+                <!-- Project 1 -->
+                <div class="project__card glass fade-up">
+                    <div class="project__header">
+                        <i class="ri-robot-fill project__icon"></i>
+                        <a href="https://github.com/huyhoanCShcmuit" target="_blank" class="project__link"><i class="ri-external-link-line"></i></a>
+                    </div>
+                    <h3 class="project__title">Autonomous AI Agent Platform</h3>
+                    <p class="project__tech">Python, LangGraph, MCP, Docker, CI/CD</p>
+                    <p class="project__description">Built a multi-agent software engineering platform enabling autonomous code analysis, patch generation, testing, documentation, and deployment workflows. Developed specialized MCP-enabled agents capable of repository inspection and CI/CD automation.</p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project__card glass fade-up">
+                    <div class="project__header">
+                        <i class="ri-shield-check-fill project__icon"></i>
+                    </div>
+                    <h3 class="project__title">AI-Powered Safety Document System</h3>
+                    <p class="project__tech">FastAPI, AWS, Flutter, Gemini API, OCR</p>
+                    <p class="project__description">Architected a highly available AWS cloud infrastructure hosting a secure backend serving 1,000+ users. Engineered an automated OCR and Gemini-powered data extraction pipeline, reducing latency to under 60 seconds.</p>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project__card glass fade-up">
+                    <div class="project__header">
+                        <i class="ri-camera-lens-fill project__icon"></i>
+                        <a href="https://github.com/huyhoanCShcmuit/coffee-tracker" target="_blank" class="project__link"><i class="ri-external-link-line"></i></a>
+                    </div>
+                    <h3 class="project__title">Smart Coffee Shop Analytics</h3>
+                    <p class="project__tech">Python, RT-DETR, ByteTrack, SQLite, Streamlit</p>
+                    <p class="project__description">Designed a real-time computer vision pipeline utilizing RT-DETR and ByteTrack, maintaining ~30 FPS for robust pedestrian tracking and hybrid facial re-identification to calculate customer dwell times.</p>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project__card glass fade-up">
+                    <div class="project__header">
+                        <i class="ri-ghost-smile-fill project__icon"></i>
+                        <a href="https://github.com/huyhoanCShcmuit/AI_Assistant_chatbot" target="_blank" class="project__link"><i class="ri-external-link-line"></i></a>
+                    </div>
+                    <h3 class="project__title">AI 3D Virtual Assistant</h3>
+                    <p class="project__tech">Three.js, Vite, Gemini API, Web Speech API</p>
+                    <p class="project__description">Built an interactive 3D virtual assistant leveraging Gemini API. Rendered 3D VRM avatars in a web environment using Three.js with procedural animations, real-time lip-syncing, and Text-to-Speech integration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS & EDUCATION GRID -->
+        <section class="skills-edu section container" id="skills">
+            <div class="skills-edu__grid grid">
+                <!-- Technical Skills -->
+                <div class="skills__section fade-up">
+                    <h2 class="section__title left-align">Technical Skills</h2>
+                    <div class="skills__container glass">
+                        <div class="skill__category">
+                            <h4>Languages</h4>
+                            <div class="skill__tags">
+                                <span>Python</span><span>TypeScript</span><span>JavaScript</span><span>SQL</span><span>Kotlin</span>
                             </div>
                         </div>
-
-                        <div class="skills__area">
-                            <h3 class="skills__title">Backend Developer</h3>
-    
-                            <div class="skills__box">
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">PHP</h3>
-                                            <span class="skills__level">Null</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">MySQL</h3>
-                                            <span class="skills__level">Basic</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">Firebase</h3>
-                                            <span class="skills__level">Basic</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">Python</h3>
-                                            <span class="skills__level">Skillful</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">Node Js</h3>
-                                            <span class="skills__level">Skillful</span>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="skill__category">
+                            <h4>Frameworks</h4>
+                            <div class="skill__tags">
+                                <span>FastAPI</span><span>NestJS</span><span>Express.js</span><span>React</span><span>Flutter</span><span>Streamlit</span><span>Three.js</span>
+                            </div>
+                        </div>
+                        <div class="skill__category">
+                            <h4>AI / ML</h4>
+                            <div class="skill__tags">
+                                <span>LLM</span><span>Agentic AI</span><span>MCP</span><span>LangGraph</span><span>Computer Vision</span><span>OCR</span><span>PyTorch</span><span>YOLO</span><span>RT-DETR</span><span>OpenCV</span>
+                            </div>
+                        </div>
+                        <div class="skill__category">
+                            <h4>Cloud & DevOps</h4>
+                            <div class="skill__tags">
+                                <span>AWS</span><span>Docker</span><span>CI/CD</span><span>Git</span>
+                            </div>
+                        </div>
+                        <div class="skill__category">
+                            <h4>Databases</h4>
+                            <div class="skill__tags">
+                                <span>MySQL</span><span>MongoDB</span><span>SQLite</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
 
-        <!--=============== FOOTER ===============-->
-        <footer class="footer container">
-            <span class="footer__copy">
-                &#169; Hoan Nguyen Huy 
-            </span>
-        </footer>
+                <!-- Education & Certifications -->
+                <div class="edu__section fade-up">
+                    <h2 class="section__title left-align">Education</h2>
+                    <div class="edu__container glass">
+                        <div class="edu__item">
+                            <h4>VNUHCM - University of Information Technology</h4>
+                            <p class="edu__degree">M.S. in Computer Science (AI)</p>
+                            <span class="edu__date">Aug 2025 - Present</span>
+                        </div>
+                        <div class="edu__item">
+                            <h4>VNUHCM - University of Science</h4>
+                            <p class="edu__degree">B.S. in Artificial Intelligence</p>
+                            <span class="edu__date">Oct 2020 - May 2024</span>
+                        </div>
+                    </div>
 
-        <!--=============== SCROLLREVEAL ===============-->
-        <script src="assets/js/scrollreveal.min.js"></script>
+                    <h2 class="section__title left-align" style="margin-top: 2rem;">Certifications</h2>
+                    <div class="certs__container glass">
+                        <ul class="certs__list">
+                            <li><i class="ri-checkbox-circle-fill"></i> NVIDIA - Applications of AI for Anomaly Detection (2025)</li>
+                            <li><i class="ri-checkbox-circle-fill"></i> Google - Project Management Professional (2025)</li>
+                            <li><i class="ri-checkbox-circle-fill"></i> Google Cloud Skills Boost - Seasons 2, 3, 4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
-    </body>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <p class="footer__copy">&#169; 2026 Huy-Hoan Nguyen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="assets/js/app.js"></script>
+</body>
 </html>
